@@ -8,7 +8,7 @@
 import scrapy
 
 
-class BandcrawlerItem(scrapy.Item):
+class BandInfo(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     name = scrapy.Field()
@@ -18,3 +18,13 @@ class BandcrawlerItem(scrapy.Item):
     formed_in = scrapy.Field()
     lyrical_themes = scrapy.Field()
     current_label = scrapy.Field()
+
+class BandDyscography(scrapy.Item):
+    main = scrapy.Field()
+    lives = scrapy.Field()
+    demos = scrapy.Field()
+    misc = scrapy.Field()
+
+class BandMembers(scrapy.Item):
+    current = scrapy.Field()
+    past = scrapy.Field()

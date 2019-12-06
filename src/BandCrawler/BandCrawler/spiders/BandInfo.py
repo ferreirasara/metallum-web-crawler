@@ -17,6 +17,6 @@ class BandinfoSpider(scrapy.Spider):
         lyrical_themes = response.css("#band_stats dl.float_right dd:nth-child(4)::text").extract()
         current_label = response.css("#band_stats dl.float_right dd:nth-child(6) a::text").extract()
         
-        band = BandcrawlerItem(name=name, country=country, genre=genre, status=status, formed_in=formed_in, lyrical_themes=lyrical_themes, current_label=current_label)
+        band = BandInfo(name=name, country=country, genre=genre, status=status, formed_in=formed_in, lyrical_themes=lyrical_themes, current_label=current_label)
         
         yield band
