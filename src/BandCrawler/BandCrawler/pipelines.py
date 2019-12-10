@@ -4,7 +4,8 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-
+import json
+from scrapy.exporters import JsonLinesItemExporter
 
 class BandcrawlerPipeline(object):
     def process_item(self, item, spider):

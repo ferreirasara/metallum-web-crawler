@@ -4,27 +4,25 @@
 #
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/items.html
-
 import scrapy
-
 
 class BandInfo(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    name = scrapy.Field()
-    country = scrapy.Field()
-    genre = scrapy.Field()
-    status = scrapy.Field()
-    formed_in = scrapy.Field()
-    lyrical_themes = scrapy.Field()
-    current_label = scrapy.Field()
+    Name = scrapy.Field()
+    Country = scrapy.Field()
+    Genre = scrapy.Field()
+    Status = scrapy.Field()
+    Formed_in = scrapy.Field()
+    Lyrical_themes = scrapy.Field()
+    Current_label = scrapy.Field()
 
 class BandDyscography(scrapy.Item):
-    main = scrapy.Field()
-    lives = scrapy.Field()
-    demos = scrapy.Field()
-    misc = scrapy.Field()
+    Title = scrapy.Field()
+    Type = scrapy.Field()
+    Year = scrapy.Field()
 
 class BandMembers(scrapy.Item):
-    current = scrapy.Field()
-    past = scrapy.Field()
+    Name = scrapy.Field()
+    Function = scrapy.Field()
+    Status = scrapy.Field()

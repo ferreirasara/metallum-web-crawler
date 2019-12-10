@@ -5,15 +5,17 @@ from BandCrawler.items import BandDyscography
 
 class BanddiscographySpider(scrapy.Spider):
     name = 'BandDiscography'
-    allowed_domains = ['metal-archives.com']
-    start_urls = ['http://metal-archives.com/']
+    def __init__(self, link='', *args, **kwargs):
+        allowed_domains = ['metal-archives.com']
+        super(BanddiscographySpider, self).__init__(*args, **kwargs)
+        self.start_urls = [link]
 
     def parse(self, response):
-        main = ''
-        lives = ''
-        demos = ''
-        misc = ''
+        for td in response.css("tr"):
+            title = td.css("td a::text").extract()
+            disc_type = td.css("td:nth-child(2)::text").extract()
+            year = td.css("td:nth-child(3)::text").extract()
 
-        discography = BandDyscography(main=main, lives=lives, demos=demos, misc=misc)
-
-        yield discography
+            if (len(title) != 0):
+                discography = BandDyscography(Title=title[0], Type=disc_type[0], Year=year[0])
+                yield discography

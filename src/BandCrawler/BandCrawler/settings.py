@@ -14,7 +14,8 @@ BOT_NAME = 'BandCrawler'
 SPIDER_MODULES = ['BandCrawler.spiders']
 NEWSPIDER_MODULE = 'BandCrawler.spiders'
 
-
+FEED_FORMAT = "json"
+FEED_URI = "band.json"
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'BandCrawler (+http://www.yourdomain.com)'
 
