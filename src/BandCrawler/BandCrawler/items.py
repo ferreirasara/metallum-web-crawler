@@ -16,8 +16,8 @@ class BandInfo(scrapy.Item):
     Formed_in = scrapy.Field()
     Lyrical_themes = scrapy.Field()
     Current_label = scrapy.Field()
-
-class BandDyscography(scrapy.Item):
+    
+class BandDiscography(scrapy.Item):
     Title = scrapy.Field()
     Type = scrapy.Field()
     Year = scrapy.Field()
